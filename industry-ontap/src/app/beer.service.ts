@@ -8,7 +8,7 @@ export class BeerService {
 
   constructor(private http: Http) { 
   	if(isDevMode()){
-  		base_url = 'http://localhost:4200';
+  		this.base_url = 'http://localhost:4200';
   	}
   }
 
