@@ -16,7 +16,7 @@ export class BeerService {
   	return http.get(`${base_url}/taps`);
   }
 
-  newBeer() {
-  	return http.post(`${base_url}/taps`);
+  newBeer(object) {
+  	return http.post(`${base_url}/taps/`, object);
   }
 }
