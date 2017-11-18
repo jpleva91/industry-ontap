@@ -1,16 +1,22 @@
-import { Injectable } from '@angular/core';
+import { Injectable, isDevMode } from '@angular/core';
 import { Http } from '@angular/http';
 
 @Injectable()
 export class BeerService {
 
-  constructor(private http: Http) { }
+	base_url = '';
 
-  // getBeer() {
-  // 	return http.get();
-  // }
+  constructor(private http: Http) { 
+  	if(isDevMode()){
+  		base_url = 'http://localhost:4200';
+  	}
+  }
 
-  // newBeer() {
-  // 	return http.post();
-  // }
+  getBeer() {
+  	return http.get(`${base_url}/taps`);
+  }
+
+  newBeer() {
+  	return http.post(`${base_url}/taps`);
+  }
 }
