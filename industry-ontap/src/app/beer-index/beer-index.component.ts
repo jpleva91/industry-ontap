@@ -7,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BeerIndexComponent implements OnInit {
 	beers = [];
+
   constructor() { }
 
   ngOnInit() {
-  	/* Call beers api */
+  	/* TODO: Call beers api */
   	this.beers = [
   		{
   			tap: 'Central',
