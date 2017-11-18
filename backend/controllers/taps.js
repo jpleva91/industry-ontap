@@ -20,5 +20,6 @@ addBeer = (req, res) => {
 		beers.push(newBeer);
 		data.save();
 		console.log(data);
+		res.json(data);
 	});
 };
