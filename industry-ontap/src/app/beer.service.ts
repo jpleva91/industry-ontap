@@ -13,10 +13,10 @@ export class BeerService {
   }
 
   getBeer() {
-  	return this.http.get(`${base_url}/taps`);
+  	return this.http.get(`${this.base_url}/taps`);
   }
 
   newBeer(object) {
-  	return this.http.post(`${base_url}/taps/`, object);
+  	return this.http.post(`${this.base_url}/taps/`, object);
   }
 }
