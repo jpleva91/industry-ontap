@@ -4,11 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "cd front-end && ng build --aot -prod -op ../back-end/dist && cd ..",
-    "start": "node back-end/server.js",
-    "postinstall": "cd back-end && npm install"
-    }
+    "deploy": "cd industry-ontap && ng build --aot -prod -op ../backend/dist && cd ..",
+    "start": "cd backend/ && node server.js",
+    "postinstall": "cd backend && npm install && cd ../industry-ontap && npm install",
+    "go" : "npm run deploy && npm run start"
   },
   "repository": {
     "type": "git",
