@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgModel } from '@angular/forms';
-// import { BeerService } from '../beer.service';
+import { BeerService } from '../beer.service';
 
 @Component({
   selector: 'app-beer-form',
@@ -13,7 +13,7 @@ export class BeerFormComponent implements OnInit {
 	tap: string = '';
 
   constructor(
-		// private beerService : BeerService
+		private beerService : BeerService
   	) { }
 
   ngOnInit() {
@@ -27,6 +27,11 @@ export class BeerFormComponent implements OnInit {
   		tap: this.tap,
   		beer: this.beerInput
   	});
+    let newBeer = {
+      tap: this.tap,
+      beer: this.beerInput
+    }
+    this.beerService.newBeer(newBeer);
   }
 
 }

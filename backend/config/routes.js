@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const bodyParser = require('body-parser');
 
-const tapController = require('../controllers/taps.js');
+const tapController = require('../controllers/taps');
 
 
 router.route('/taps')

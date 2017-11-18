@@ -17,9 +17,10 @@ import { BeerFormComponent } from './beer-form/beer-form.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpModule
   ],
-  providers: [BeerService, HttpModule],
+  providers: [BeerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
