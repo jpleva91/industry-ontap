@@ -29,7 +29,7 @@ export class BeerIndexComponent implements OnInit {
   			tap: 'South',
   			beer: 'bud'
   		}
-  	]
+  	];
   }
 
 }
