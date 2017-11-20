@@ -12,26 +12,17 @@ export class BeerFormComponent implements OnInit {
 	beerInput: string = '';
 	tap: string = '';
 
-  constructor(
-		private beerService : BeerService
-  	) { }
+  constructor(private beerService : BeerService) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   submit(beer, tap){
+    /* Post new beer on submit */
+    let newBeer = {tapName: this.tap, beer: this.beerInput}
 
-  	/* TODO: PostBeer */
-  	console.log('submited');
-  	console.log({
-  		tap: this.tap,
-  		beer: this.beerInput
-  	});
-    let newBeer = {
-      tap: this.tap,
-      beer: this.beerInput
-    }
-    this.beerService.newBeer(newBeer);
+    this.beerService.newBeer(newBeer).subscribe(response => {
+      console.log(response.json())
+    })
   }
 
 }

@@ -5,9 +5,10 @@ const bodyParser = require('body-parser');
 let routes = require('./config/routes');
 
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
 
 // Connect to the DB
-mongoose.Promise = global.Promise;
+//mongoose.Promise = global.Promise;
 mongoose.connect(	process.env.MONGODB_URI || 
                   process.env.MONGOLAB_URI || 
                   process.env.MONGOHQ_URL || 

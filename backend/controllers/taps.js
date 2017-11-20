@@ -12,7 +12,7 @@ index = (req, res) => {
 addBeer = (req, res) => {
 	// create the new beer based on the form request
 	let newBeer = req.body.beer;
-	let tapName = req.nody.tapName;
+	let tapName = req.body.tapName;
 	// Add beer to tap
 	db.Tap.findOne({'name' : tapName}, (err, data) => {
 		let beers = data.beers;

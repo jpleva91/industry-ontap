@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BeerService } from '../beer.service'
 
 @Component({
   selector: 'app-beer-index',
@@ -8,28 +9,12 @@ import { Component, OnInit } from '@angular/core';
 export class BeerIndexComponent implements OnInit {
 	beers = [];
 
-  constructor() { }
+  constructor(private beerService: BeerService) { }
 
   ngOnInit() {
-  	/* TODO: Call beers api */
-  	this.beers = [
-  		{
-  			tap: 'Central',
-  			beer: 'bud'
-  		},
-  		{
-  			tap: 'Upstairs',
-  			beer: 'bud'
-  		},
-  		{
-  			tap: 'North',
-  			beer: 'bud'
-  		},
-  		{
-  			tap: 'South',
-  			beer: 'bud'
-  		}
-  	];
+  	this.beerService.getBeer().subscribe(response => {
+  		this.beers = response.json();
+  	})
   }
 
 }
