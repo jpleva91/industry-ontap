@@ -1,14 +1,20 @@
-<form (ngSubmit)="submit(beerInput,tap)">
-	<!-- Choose Tap -->
-	<label for="tapList">Tap:</label>
-	<select name="tap" id="tapList" [(ngModel)]="tap">
-		<option *ngFor="let tap of tapOptions">{{tap}}</option>
-	</select>
+<div class="container">
+	<form class="text-center" (ngSubmit)="submit(beerInput,tap)">
+		<!-- Choose Tap -->
+		<div class="form-group">
+			<label for="tapList">Tap:</label>
+			<select class="form-control" name="tap" id="tapList" [(ngModel)]="tap">
+				<option *ngFor="let tap of tapOptions">{{tap}}</option>
+			</select>
+		</div>
 
-	<!-- Enter Beer Name -->
-	<label for="beerInput">Beer:</label>
-	<input id="beerInput" name="beerInput" type="text" [(ngModel)]="beerInput" />
+		<!-- Enter Beer Name -->
+		<div class="form-group">
+			<label for="beerInput">Beer:</label>
+			<input class="form-control" id="beerInput" name="beerInput" type="text" [(ngModel)]="beerInput" />
+		</div>
 
-	<!-- Submit -->
-	<input type="submit" value="UPDATE BEER" />
-</form>
+		<!-- Submit -->
+		<input [disabled]="!beerInput||!tap" class="btn btn-success" type="submit" value="UPDATE BEER" />
+	</form>
+</div>
