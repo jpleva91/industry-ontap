@@ -1,4 +1,4 @@
 <h1>Whats On Tap:</h1>
 <ul *ngFor="let beer of beers">
-	<li>{{beer.beer}} @ {{beer.tap}}</li>
+	<li>{{beer.beers[beer.beers.length-1]}} @ {{beer.name}} (updated: {{beer.lastUpdated | date:'short'}})</li>
 </ul>

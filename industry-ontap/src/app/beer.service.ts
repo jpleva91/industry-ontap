@@ -8,7 +8,7 @@ export class BeerService {
 
   constructor(private http: Http) { 
   	if(isDevMode()){
-  		this.base_url = 'http://localhost:4200';
+  		this.base_url = 'http://localhost:3000';
   	}
   }
 
@@ -17,6 +17,6 @@ export class BeerService {
   }
 
   newBeer(object) {
-  	return this.http.post(`${this.base_url}/taps/`, object);
+  	return this.http.post(`${this.base_url}/taps`, object);
   }
 }
