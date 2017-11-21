@@ -12,5 +12,4 @@ const TapComponent = (props) => (
 	</div>
 )
 
-
 export { TapComponent }

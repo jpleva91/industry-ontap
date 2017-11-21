@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import './lib/css/bootstrap.min.css'; /* Bootstrap 4 */
 import './App.css';
-import { TapListComponent } from './components';
+import { TapListComponent, TapFormComponent } from './components';
 
 class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      response:[
+      tapLocations: ['Central', 'North', 'Upstairs', 'South'],
+      taps: [
       {
       _id: "5a123f7649d38b037ed4dc3a",
       name: "Central",
@@ -59,11 +60,18 @@ class App extends Component {
       ]
     };
   }
+
+  handleSubmit(event, tapName, beerName){
+    event.preventDefault();
+    console.log({tapName: tapName, beerName: beerName});
+  }
+
   render() {
     return (
       <div>
         <h1>Whats On Tap</h1>
-        <TapListComponent tapList={this.state.response} />
+        <TapListComponent tapList={this.state.taps} />
+        <TapFormComponent tapLocations={this.state.tapLocations} handleSubmit={this.handleSubmit} />
       </div>
     );
   }
