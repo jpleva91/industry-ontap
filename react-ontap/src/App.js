@@ -15,6 +15,7 @@ class App extends Component {
   }
 
   componentDidMount(){
+    // TODO: conditional base url
     axios.get('http://localhost:3001/taps')
       .then(res => {
         /* add data to state */
@@ -28,6 +29,7 @@ class App extends Component {
     event.preventDefault();
     console.log({tapName: tapName, beer: beerName});
     /* API POST */
+    // TODO: conditional base url
     axios.post('http://localhost:3001/taps',{tapName: tapName, beer: beerName})
       .then(res => {
         /* Update state */
