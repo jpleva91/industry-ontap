@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './lib/css/bootstrap.min.css'; /* Bootstrap 4 */
 import './App.css';
 import { TapListComponent } from './components';
 
