@@ -6,7 +6,7 @@
   "scripts": {
     "deploy": "cd industry-ontap && ng build --aot -prod -op ../backend/dist && cd ..",
     "start": "cd backend/ && node server.js",
-    "postinstall": "cd backend && npm install && cd ../industry-ontap && npm install",
+    "postinstall": "cd backend && npm install",
     "go" : "npm run deploy && npm run start"
   },
   "repository": {
