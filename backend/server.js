@@ -26,8 +26,10 @@ app.use(function(req, res, next) {
 
 
 // Serve up front end
-app.use(express.static(__dirname + '/dist'));
+//app.use(express.static(__dirname + '/dist'));
 
+// Serve up front end WITH REACT!
+app.use(express.static(__dirname + '/build'));
 
 // Use routes
 app.use(routes);

@@ -16,7 +16,7 @@ class App extends Component {
 
   componentDidMount(){
     // TODO: conditional base url
-    axios.get('http://localhost:3001/taps')
+    axios.get('/taps')
       .then(res => {
         /* add data to state */
         this.setState({
@@ -30,7 +30,7 @@ class App extends Component {
     console.log({tapName: tapName, beer: beerName});
     /* API POST */
     // TODO: conditional base url
-    axios.post('http://localhost:3001/taps',{tapName: tapName, beer: beerName})
+    axios.post('/taps',{tapName: tapName, beer: beerName})
       .then(res => {
         /* Update state */
         let currentTaps = this.state.taps.map(tap => {
